@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CRUD Repository Interface</Title>
+			<Author>Nguyễn Duy Quý</Author>
+			<Description>Creates a CRUD repository interface with standard operations</Description>
+			<Shortcut>irepcrud</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>InterfaceName</ID>
+					<ToolTip>Name of the interface</ToolTip>
+					<Default>IRepository</Default>
+				</Literal>
+				<Literal>
+					<ID>EntityClass</ID>
+					<ToolTip>Type of the entity</ToolTip>
+					<Default>Entity</Default>
+				</Literal>
+				<Literal>
+					<ID>IdType</ID>
+					<ToolTip>Type of the Entity Class unique identifier</ToolTip>
+					<Default>int</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[public interface $InterfaceName$
+    {
+		Task<$EntityClass$?> GetAsync($IdType$ id);
+		Task<IEnumerable<$EntityClass$>> GetAllAsync();
+		Task<bool> AddAsync($EntityClass$ entity);
+		Task<bool> UpdateAsync($EntityClass$ entity);
+		Task<bool> RemoveAsync($IdType$ id);
+	}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

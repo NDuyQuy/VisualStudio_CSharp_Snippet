@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0">
+	<Header>
+		<Title>singleton</Title>
+		<Shortcut>singleton</Shortcut>
+		<Description>Generates a singleton pattern for a DAO class</Description>
+		<Author>NguyenDuyQuy</Author>
+		<SnippetTypes>
+			<SnippetType>Expansion</SnippetType>
+		</SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+			<Literal>
+				<ID>class</ID>
+				<ToolTip>Class name for the singleton</ToolTip>
+				<Default>YourClassName</Default>
+			</Literal>
+		</Declarations>
+		<Code Language="csharp">
+			<![CDATA[
+        private static $class$? instance;
+        private static readonly object instanceLock = new object();
+        public static $class$ Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    instance ??= new $class$();
+                    return instance;
+                }
+            }
+        }
+      ]]>
+		</Code>
+	</Snippet>
+</CodeSnippet>

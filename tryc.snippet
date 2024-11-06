@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0">
+	<Header>
+		<Title>Try-Catch Block</Title>
+		<Shortcut>tryc</Shortcut>
+		<Description>Generates a try-catch block and throw exception message</Description>
+		<Author>NguyenDuyQuy</Author>
+		<SnippetTypes>
+			<SnippetType>Expansion</SnippetType>
+		</SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+			<Literal>
+				<ID>ExceptionType</ID>
+				<ToolTip>Type of Exception</ToolTip>
+				<Default>System.Exception</Default>
+			</Literal>
+		</Declarations>
+		<Code Language="csharp">
+			<![CDATA[try
+        {
+			$start$
+        }
+        catch ($ExceptionType$ ex)
+        {
+            throw new Exception(ex.Message);
+        }
+      ]]>
+		</Code>
+	</Snippet>
+</CodeSnippet>
